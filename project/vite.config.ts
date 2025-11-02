@@ -3,6 +3,14 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  base: '/', // ✅ Prevent blank white screen on Vercel
+  build: {
+    outDir: 'dist', // ✅ Explicitly set output folder
+  },
+  server: {
+    host: true,
+    https: false, // ✅ allow camera in local dev
+  },
   plugins: [
     react(),
     VitePWA({
@@ -15,6 +23,8 @@ export default defineConfig({
         theme_color: '#000000',
         background_color: '#000000',
         display: 'standalone',
+        scope: '/',
+        start_url: '/', // ✅ Avoid install-not-loading bug
         icons: [
           {
             src: '/icon-192.png',
