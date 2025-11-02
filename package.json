@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "react-confetti": "^6.4.0"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0"
+  }
+}
